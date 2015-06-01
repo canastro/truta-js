@@ -1,0 +1,10 @@
+template#nameTagTemplate
+    style
+        include style.css
+
+    .outer
+        .boilerplate Hi! My name is
+        .name(es-name="name")
+            | cenas: 
+            content(select=".name")
+        input#name-input(es-model="name")

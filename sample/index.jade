@@ -1,0 +1,22 @@
+doctype html
+html.no-js
+    head
+        meta(charset="utf-8")
+        title
+            | teste
+        meta(name='description', content='')
+        meta(name='viewport', content='width=device-width')
+        link(rel='stylesheet', href='assets/styles/styles.css')
+
+    body(ng-app='sampleapp')
+
+        .addClass Add Class Test
+        .removeClass.passed.failed
+        .hasClass Has Class Test
+
+        a(href="#") On Test (Click me)
+        
+        
+        include ./components/name/index.jade
+
+        script(src='scripts/bundle.js')

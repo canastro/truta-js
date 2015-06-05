@@ -4,7 +4,6 @@ template#nameTagTemplate
 
     .outer
         .boilerplate Hi! My name is
-        .name(es-name="name")
-            | cenas: 
-            content(select=".name")
-        input#name-input(es-model="name")
+        .name.bindable
+            | cenas: ${data.name} ${data.last_name}
+        input#name-input

@@ -15,11 +15,12 @@ $("a").on("click", function (e) {
 });
 
 var data = {
-    name: 'teste'
+    name: 'teste',
+    last_name: 'teste'
 };
 var component = new Component({
-    host: '#nameTag', 
-    template: '#nameTagTemplate', 
+    host: '#nameTag',
+    template: '#nameTagTemplate',
     scope: data
 });
 

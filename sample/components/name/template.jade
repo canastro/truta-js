@@ -1,9 +1,24 @@
+//
+    template#nameTagTemplate
+        style
+            include style.css
+
+        .outer
+            .boilerplate Hi! My name is
+            .name.bindable
+                | cenas: ${data.name} ${data.last_name}
+            input#name-input(es-model="data.last_name")
+
+
 template#nameTagTemplate
     style
         include style.css
 
     .outer
-        .boilerplate Hi! My name is
-        .name.bindable
-            | cenas: ${data.name} ${data.last_name}
-        input#name-input(es-model="data.last_name")
+        .label First Name:
+        .value.bindable ${data.name}
+        input.last-name-input(es-model="data.name")
+
+        .label Last Name:
+        .value.bindable ${data.last_name}
+        input.last-name-input(es-model="data.last_name")

@@ -6,4 +6,4 @@ template#nameTagTemplate
         .boilerplate Hi! My name is
         .name.bindable
             | cenas: ${data.name} ${data.last_name}
-        input#name-input
+        input#name-input(es-model="data.last_name")

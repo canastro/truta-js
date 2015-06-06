@@ -30,7 +30,7 @@ promise.then(init);
 
 
 function init (link) {
-    // document.querySelector('.container').appendChild(document.createElement('profile-form'));
+
     var data = {
         name: 'teste',
         last_name: 'teste'
@@ -41,47 +41,14 @@ function init (link) {
         element: 'profile-form',
         scope: data,
         methods: {
-            teste: () => {
-                console.log(this);
+            teste: (component) => {
+                component.data.value.name = 'agaaggaga';
             }
         }
     });
-}
 
-// var content = link.import;
-//
-// $('.addClass').addClass('passed');
-// $('.removeClass').removeClass('failed');
-//
-// if ($('.hasClass').hasClass('hasClass')) {
-//     $('.hasClass').addClass('passed');
-// }
-//
-// $('a').on('click', function (e) {
-//     e.preventDefault();
-//     alert('cliked');
-// });
-//
-// var data = {
-//     name: 'teste',
-//     last_name: 'teste'
-// };
-// var component = new Component({
-//     host: '#nameTag',
-//     template: '#nameTagTemplate',
-//     scope: data,
-//     methods: {
-//         teste: () => {
-//             console.log(this);
-//         }
-//     }
-// });
-//
-// component.teste();
-//
-// var store = new Store();
-//
-// window.setTimeout(function () {
-//
-//     store.get(component.key).value.name = 'coisas';
-// }, 1000);
+    var store = new Store();
+    window.setTimeout(function () {
+        store.get(component.key).value.name = 'coisas';
+    }, 1000);
+}

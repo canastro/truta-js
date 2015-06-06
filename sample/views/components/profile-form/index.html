@@ -7,15 +7,18 @@
       <div class="label">First Name:</div>
       <div class="value bindable">${data.name}</div>
       <div class="input">
-        <input es-model="data.name" class="last-name-input"/>
+        <input es-item="es-item" es-model="data.name" class="last-name-input"/>
       </div>
     </div>
     <div class="row">
       <div class="label">Last Name:</div>
       <div class="value bindable">${data.last_name}</div>
       <div class="input">
-        <input es-model="data.last_name" class="last-name-input"/>
+        <input es-item="es-item" es-model="data.last_name" class="last-name-input"/>
       </div>
+    </div>
+    <div class="row">
+      <div es-item="es-item" es-click="teste" class="div">Button</div>
     </div>
   </div>
 </template>

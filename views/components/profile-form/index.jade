@@ -7,13 +7,16 @@ template#template
             .label First Name:
             .value.bindable ${data.name}
             .input
-                input.last-name-input(es-model="data.name")
+                input.last-name-input(es-item es-model="data.name")
 
         .row
             .label Last Name:
             .value.bindable ${data.last_name}
             .input
-                input.last-name-input(es-model="data.last_name")
+                input.last-name-input(es-item es-model="data.last_name")
+
+        .row
+            .div(es-item es-click="teste") Button
 
 script
     include script.js

@@ -1,5 +1,7 @@
 import {$} from './lib/dom';
-import {Store} from './lib/store';
+import Store from './lib/store';
+import Router from './lib/router';
+import Container from './lib/container';
 import {Component} from './lib/component';
 
 function loadImports (path, resolve, reject) {
@@ -36,8 +38,7 @@ function init (link) {
         last_name: 'teste'
     };
 
-    var component = new Component({
-        host: '.container',
+    Container.register('profile-form', {
         element: 'profile-form',
         scope: data,
         methods: {
@@ -47,8 +48,14 @@ function init (link) {
         }
     });
 
-    var store = new Store();
-    window.setTimeout(function () {
-        store.get(component.key).value.name = 'coisas';
-    }, 1000);
+    Router.state('', {
+        content: {
+            component: 'profile-form'
+        },
+        hello: {
+            component: 'profile-form'
+        }
+    });
+
+    Router.start();
 }

@@ -15,10 +15,14 @@ template#nameTagTemplate
         include style.css
 
     .outer
-        .label First Name:
-        .value.bindable ${data.name}
-        input.last-name-input(es-model="data.name")
+        .row 
+            .label First Name:
+            .value.bindable ${data.name}
+            .input
+                input.last-name-input(es-model="data.name")
 
-        .label Last Name:
-        .value.bindable ${data.last_name}
-        input.last-name-input(es-model="data.last_name")
+        .row
+            .label Last Name:
+            .value.bindable ${data.last_name}
+            .input
+                input.last-name-input(es-model="data.last_name")

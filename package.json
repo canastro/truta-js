@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "dependencies": {
-    
+    "merge-stream": "^0.1.7"
   },
   "devDependencies": {
     "babelify": "^6.1.2",

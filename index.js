@@ -1,31 +1,87 @@
-import {$} from "./lib/dom";
-import {Store} from "./lib/store";
-import {Component} from "./lib/component";
+import {$} from './lib/dom';
+import {Store} from './lib/store';
+import {Component} from './lib/component';
 
-$(".addClass").addClass("passed");
-$(".removeClass").removeClass("failed");
+function loadImports (path, resolve, reject) {
+    var link = document.createElement('link');
 
-if ($(".hasClass").hasClass("hasClass")) {
-    $(".hasClass").addClass("passed");
+    function handleLoad(e) {
+        console.log('Loaded import: ' + e.target.href);
+        resolve(link);
+    }
+    function handleError(e) {
+        console.log('Error loading import: ' + e.target.href);
+        reject();
+    }
+
+
+    link.rel = 'import';
+    link.href = path;
+    link.onload = handleLoad;
+    link.onerror = handleError;
+    document.head.appendChild(link);
 }
 
-$("a").on("click", function (e) {
-    e.preventDefault();
-    alert("cliked");
+var promise = new Promise(function (resolve, reject) {
+    loadImports('/views/components/profile-form/index.html', resolve, reject)
 });
 
-var data = {
-    name: 'teste',
-    last_name: 'teste'
-};
-var component = new Component({
-    host: '#nameTag',
-    template: '#nameTagTemplate',
-    scope: data
-});
+promise.then(init);
 
-var store = new Store();
 
-window.setTimeout(function () {
-    store.get(1).value.name = 'coisas';
-}, 1000);
+function init (link) {
+    // document.querySelector('.container').appendChild(document.createElement('profile-form'));
+    var data = {
+        name: 'teste',
+        last_name: 'teste'
+    };
+
+    var component = new Component({
+        host: '.container',
+        element: 'profile-form',
+        scope: data,
+        methods: {
+            teste: () => {
+                console.log(this);
+            }
+        }
+    });
+}
+
+// var content = link.import;
+//
+// $('.addClass').addClass('passed');
+// $('.removeClass').removeClass('failed');
+//
+// if ($('.hasClass').hasClass('hasClass')) {
+//     $('.hasClass').addClass('passed');
+// }
+//
+// $('a').on('click', function (e) {
+//     e.preventDefault();
+//     alert('cliked');
+// });
+//
+// var data = {
+//     name: 'teste',
+//     last_name: 'teste'
+// };
+// var component = new Component({
+//     host: '#nameTag',
+//     template: '#nameTagTemplate',
+//     scope: data,
+//     methods: {
+//         teste: () => {
+//             console.log(this);
+//         }
+//     }
+// });
+//
+// component.teste();
+//
+// var store = new Store();
+//
+// window.setTimeout(function () {
+//
+//     store.get(component.key).value.name = 'coisas';
+// }, 1000);

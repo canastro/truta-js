@@ -1,8 +1,4 @@
-import {$} from './lib/dom';
-import Store from './lib/store';
-import Router from './lib/router';
-import Truta from './lib/truta';
-import {Component} from './lib/component';
+import { $, Store, Router, Truta } from './lib/index';
 
 function loadImport (path, resolve, reject) {
     var link = document.createElement('link');
@@ -109,4 +105,9 @@ function init (link) {
         });
 
     Router.start();
+
+    document.querySelector('.check-store').addEventListener('click', function checkStore () {
+        debugger;
+        console.log(Store);
+    }, false);
 }

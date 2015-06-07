@@ -1,4 +1,4 @@
-import { $, Store, Router, Truta } from './lib/index';
+import { $, Data, Store, Router, Truta, Http } from './lib/index';
 
 Truta.bootstrap([
     '/views/components/profile-form/index.html',
@@ -7,24 +7,26 @@ Truta.bootstrap([
 
     Truta
         .component('profile-form', function (ProfileForm) {
+
             let data = {
                 name: 'teste',
                 last_name: 'teste'
             };
 
-            let teste = () => {
+            let AuthProvider = Truta.getProviderByName('auth');
+
+            ProfileForm.teste = function () {
                 ProfileForm.data.value.name = 'aahahaha';
+                AuthProvider.teste();
             };
 
             return {
                 element: 'profile-form',
-                data: data,
-                methods: {
-                    teste
-                }
+                data: data
             };
         })
-        .component('truta-header', function () {
+        .component('truta-header', function (TrutaHeader) {
+
             let data = {
                 title: 'Cenas'
             };
@@ -33,6 +35,22 @@ Truta.bootstrap([
                 element: 'truta-header',
                 data: data
             };
+        })
+        .provider('auth', function (AuthProvider) {
+
+
+
+            AuthProvider.teste = function () {
+                // var url =
+                // Http.post(url, {
+                //     email: "user@test.com",
+                //     password: "password"
+                // }).then(function(response) {
+                //     console.log(response);
+                // });
+                alert(1);
+            };
+
         });
 
     Router

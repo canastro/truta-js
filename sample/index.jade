@@ -10,7 +10,11 @@ html.no-js
         link(rel='import', href='/views/components/profile-form/index.html')
 
     body
+        header(es-view="header")
+
         .container(es-view="content")
         .container(es-view="hello")
+
+        a(href="#teste") teste
 
         script(async src='scripts/bundle.js')

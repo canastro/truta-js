@@ -1,10 +1,10 @@
 import {$} from './lib/dom';
 import Store from './lib/store';
 import Router from './lib/router';
-import Container from './lib/container';
+import Truta from './lib/truta';
 import {Component} from './lib/component';
 
-function loadImports (path, resolve, reject) {
+function loadImport (path, resolve, reject) {
     var link = document.createElement('link');
 
     function handleLoad(e) {
@@ -24,11 +24,23 @@ function loadImports (path, resolve, reject) {
     document.head.appendChild(link);
 }
 
-var promise = new Promise(function (resolve, reject) {
-    loadImports('/views/components/profile-form/index.html', resolve, reject)
+var urls = [
+    '/views/components/profile-form/index.html',
+    '/views/components/header/index.html'
+];
+
+var promises = [];
+
+urls.forEach(function (url) {
+    promises.push(new Promise(function (resolve, reject) {
+        loadImport(url, resolve, reject)
+    }))
 });
 
-promise.then(init);
+Promise.all(promises).then(init);
+
+
+// promise.then(init);
 
 
 function init (link) {
@@ -38,24 +50,48 @@ function init (link) {
         last_name: 'teste'
     };
 
-    Container.register('profile-form', {
-        element: 'profile-form',
-        scope: data,
-        methods: {
-            teste: (component) => {
-                component.data.value.name = 'agaaggaga';
+    Truta
+        .component('profile-form', {
+            element: 'profile-form',
+            scope: data,
+            methods: {
+                teste: (component) => {
+                    component.data.value.name = 'agaaggaga';
+                }
             }
-        }
-    });
+        })
+        .component('truta-header', {
+            element: 'truta-header',
+            scope: {
+                title: 'Titulo'
+            },
+            methods: {
+                teste: (component) => {
+                    component.data.value.name = 'agaaggaga';
+                }
+            }
+        })
+        .provider('auth', function () {
 
-    Router.state('', {
-        content: {
-            component: 'profile-form'
-        },
-        hello: {
-            component: 'profile-form'
-        }
-    });
+        });
+
+    Router
+        .state('', {
+            header: {
+                component: 'truta-header'
+            },
+            content: {
+                component: 'profile-form'
+            }
+        })
+        .state('teste', {
+            content: {
+                component: 'profile-form'
+            },
+            hello: {
+                component: 'profile-form'
+            }
+        });
 
     Router.start();
 }

@@ -5,13 +5,13 @@ template#template
     .outer
         .row
             .label First Name:
-            .value.bindable ${data.name}
+            .value(es-bindable) ${data.name}
             .input
                 input.last-name-input(es-item es-model="data.name")
 
         .row
             .label Last Name:
-            .value.bindable ${data.last_name}
+            .value(es-bindable) ${data.last_name}
             .input
                 input.last-name-input(es-item es-model="data.last_name")
 

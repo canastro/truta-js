@@ -51,28 +51,40 @@ function init (link) {
     };
 
     Truta
-        .component('profile-form', {
-            element: 'profile-form',
-            scope: data,
-            methods: {
-                teste: (component) => {
-                    component.data.value.name = 'agaaggaga';
-                }
-            }
-        })
-        .component('truta-header', {
-            element: 'truta-header',
-            scope: {
-                title: 'Titulo'
-            },
-            methods: {
-                teste: (component) => {
-                    component.data.value.name = 'agaaggaga';
-                }
-            }
-        })
-        .provider('auth', function () {
+        .component('profile-form', function () {
+            let scope = {
+                name: 'teste',
+                last_name: 'teste'
+            };
 
+            let teste = () => {
+                this.data.value.name = 'aahahaha';
+            };
+
+            return {
+                element: 'profile-form',
+                scope: scope,
+                methods: {
+                    teste
+                }
+            };
+        })
+        .component('truta-header', function () {
+            let scope = {
+                title: 'Cenas'
+            };
+
+            let teste = () => {
+                this.data.value.name = 'aahahaha';
+            };
+
+            return {
+                element: 'truta-header',
+                scope: scope,
+                methods: {
+                    teste
+                }
+            };
         });
 
     Router
@@ -85,6 +97,9 @@ function init (link) {
             }
         })
         .state('teste', {
+            header: {
+                component: 'truta-header'
+            },
             content: {
                 component: 'profile-form'
             },

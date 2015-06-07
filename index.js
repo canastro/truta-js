@@ -6,39 +6,32 @@ Truta.bootstrap([
 ]).then(function () {
 
     Truta
-        .component('profile-form', function () {
-            let scope = {
+        .component('profile-form', function (ProfileForm) {
+            let data = {
                 name: 'teste',
                 last_name: 'teste'
             };
 
             let teste = () => {
-                this.data.value.name = 'aahahaha';
+                ProfileForm.data.value.name = 'aahahaha';
             };
 
             return {
                 element: 'profile-form',
-                scope: scope,
+                data: data,
                 methods: {
                     teste
                 }
             };
         })
         .component('truta-header', function () {
-            let scope = {
+            let data = {
                 title: 'Cenas'
-            };
-
-            let teste = () => {
-                this.data.value.name = 'aahahaha';
             };
 
             return {
                 element: 'truta-header',
-                scope: scope,
-                methods: {
-                    teste
-                }
+                data: data
             };
         });
 

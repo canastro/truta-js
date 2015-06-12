@@ -16,3 +16,5 @@ ES6 features used
 * Map and Sets
 * Arrow functions
 * Classes
+* Promise
+* Object.assign

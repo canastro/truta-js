@@ -1,0 +1,18 @@
+{
+  "name": "trutaJS",
+  "main": "index.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/canastro/TrutaJS",
+  "authors": [
+    "Ricardo Canastro <ricardo.canastro@blip.pt>"
+  ],
+  "description": "ES6 framework",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -10,14 +10,23 @@ Truta.bootstrap([
 
             let data = {
                 name: 'teste',
-                last_name: 'teste'
+                last_name: 'teste',
+                items: [
+                    {text: '1'},
+                    {text: '2'}
+                ]
             };
 
             let AuthProvider = Truta.getProviderByName('auth');
 
             ProfileForm.teste = function () {
-                ProfileForm.data.value.name = 'aahahaha';
-                AuthProvider.teste();
+                //ProfileForm.data.value.name = 'aahahaha';
+                //AuthProvider.teste();
+
+                ProfileForm.data.value.items =  [
+                    {text: '3'},
+                    {text: '4'}
+                ];
             };
 
             return {

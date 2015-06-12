@@ -5,20 +5,23 @@
   <div class="outer">
     <div class="row">
       <div class="label">First Name:</div>
-      <div es-bindable="es-bindable" class="value">${data.name}</div>
+      <div es-bindable="es-bindable" class="value">${name}</div>
       <div class="input">
-        <input es-item="es-item" es-model="data.name" class="last-name-input"/>
+        <input es-item="es-item" es-model="name" class="last-name-input"/>
       </div>
     </div>
     <div class="row">
       <div class="label">Last Name:</div>
-      <div es-bindable="es-bindable" class="value">${data.last_name}</div>
+      <div es-bindable="es-bindable" class="value">${last_name}</div>
       <div class="input">
-        <input es-item="es-item" es-model="data.last_name" class="last-name-input"/>
+        <input es-item="es-item" es-model="last_name" class="last-name-input"/>
       </div>
     </div>
     <div class="row">
       <div es-item="es-item" es-click="teste" class="div">Button</div>
+    </div>
+    <div es-repeat="item in items" class="row">
+      <div es-bindable="es-bindable" class="ohoh">${item.text}</div>
     </div>
   </div>
 </template>

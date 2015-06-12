@@ -5,18 +5,21 @@ template#template
     .outer
         .row
             .label First Name:
-            .value(es-bindable) ${data.name}
+            .value(es-bindable) ${name}
             .input
-                input.last-name-input(es-item es-model="data.name")
+                input.last-name-input(es-item es-model="name")
 
         .row
             .label Last Name:
-            .value(es-bindable) ${data.last_name}
+            .value(es-bindable) ${last_name}
             .input
-                input.last-name-input(es-item es-model="data.last_name")
+                input.last-name-input(es-item es-model="last_name")
 
         .row
             .div(es-item es-click="teste") Button
+
+        .row(es-repeat="item in items")
+            .ohoh(es-bindable) ${item.text}
 
 script
     include script.js

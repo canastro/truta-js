@@ -4,10 +4,10 @@ This is not a production ready framework... This is just my playground for ES6 f
 
 Usage
 ------
-I'll create a small application using this TrutaJS
+Checkout this mini under-construction application: https://github.com/canastro/MyCity
 
 
-ES6 features used
+ES6 features used:
 ------
 * Shadow DOM
 * Web components
@@ -18,3 +18,10 @@ ES6 features used
 * Classes
 * Promise
 * Object.assign
+
+
+To do list:
+------
+* Create a class of watchers?
+* The repeat is deeply binded to "item in <var>"
+* In a binded model it seems to be replacing its own value as I write

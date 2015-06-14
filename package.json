@@ -12,11 +12,14 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/canastro/TrutaJS.git"
-  },
+  }
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/canastro/TrutaJS/issues"
   },
-  "homepage": "https://github.com/canastro/TrutaJS"
+  "homepage": "https://github.com/canastro/TrutaJS",
+  "browserify": {
+    "transform": [["babelify", { "optional": ["runtime"] }]]
+  }
 }

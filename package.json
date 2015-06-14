@@ -1,0 +1,22 @@
+{
+  "name": "truta-js",
+  "version": "1.0.0",
+  "description": "Stupid ES6 Framework ====== This is not a production ready framework... This is just my playground for ES6 features.",
+  "main": "lib/index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/canastro/TrutaJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/canastro/TrutaJS/issues"
+  },
+  "homepage": "https://github.com/canastro/TrutaJS"
+}

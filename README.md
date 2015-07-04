@@ -23,5 +23,3 @@ ES6 features used:
 To do list:
 ------
 * Create a class of watchers?
-* The repeat is deeply binded to "item in <var>"
-* In a binded model it seems to be replacing its own value as I write

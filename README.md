@@ -1,4 +1,4 @@
-![alt tag](trutajs-400px.png)
+![alt tag](trutajs-250px.png)
 
 
 Stupid ES6 Framework

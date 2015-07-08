@@ -7,7 +7,7 @@ This is not a production ready framework... This is just my playground for ES6 f
 
 Usage
 ------
-Checkout this mini under-construction application: https://github.com/canastro/MyCity
+Checkout this mini under-construction application: https://github.com/canastro/trutajs-todomvc
 
 
 ES6 features used:

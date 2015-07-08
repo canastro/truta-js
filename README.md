@@ -1,3 +1,6 @@
+![alt tag](trutajs-400px.png)
+
+
 Stupid ES6 Framework
 ======
 This is not a production ready framework... This is just my playground for ES6 features.
